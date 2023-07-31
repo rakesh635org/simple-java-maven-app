@@ -91,10 +91,7 @@ jobs:
       - name: Build with Maven
         run: mvn -B package --file pom.xml 
       - name: Auto approve
-        uses: hmarr/auto-approve-action@v2.0.0 # Custom action for auto approval already available on marketplace
-        # Perform the auto approve action only when the PR is raised by dependabot
-        ## if: github.actor == 'dependabot[bot]' || github.actor == 'dependabot-preview[bot]'
+        uses: juliangruber/approve-pull-request-action@v1
         with:
-          # Create a personal access token and store it under the Secrets section of the particular repository
-          # with the key "GITHUB_ACTIONS_TOKEN"
           github-token: ${{ secrets.TOKEN_GITHUB }}
+          number: ${{ github.event.number }}
