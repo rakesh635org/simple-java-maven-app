@@ -45,3 +45,8 @@ jobs:
         with:
           github-token: ${{ secrets.RAKESHLTIMTOKEN }}
           number: ${{ github.event.number }}
+      - name: Merge PR
+        uses: juliangruber/merge-pull-request-action@v1
+        with:
+          github-token: ${{ secrets.RAKESHLTIMTOKEN }}
+          number: ${{ github.event.number }}
