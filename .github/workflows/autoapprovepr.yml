@@ -93,5 +93,5 @@ jobs:
       - name: Auto approve
         uses: juliangruber/approve-pull-request-action@v1
         with:
-          github-token: ${{ secrets.TOKEN_GITHUB }}
+          github-token: ${{ secrets.RAKESHLTIMTOKEN }}
           number: ${{ github.event.number }}
